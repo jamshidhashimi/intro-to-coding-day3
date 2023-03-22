@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Let's Learn JavaScript</title>
+  </head>
 
+  <body>
+    <label for="num1">Input your first number:</label>
+    <input type="number" name="num1" id="num1">
+
+    <br>
+
+    <label for="num2">Input your second number:</label>
+    <input type="number" name="num2" id="num2">
+
+    <br>
+
+    <label for="operation">Input the operation type:</label>
+    <select name="operation" id="operation">
+      <option value=""></option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <br>
+
+    <button type="button" onclick="calculate()">Submit</button>
+
+    <br>
+
+    Result is: <span id="result"></span>
+
+    <script>
+      function calculate() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        const opp = document.getElementById('operation').value;
+        let result = 0;
+
+        if (opp === "+") {
+          result = num1 + num2;
+        } else if (opp === "-") {
+          result = num1 - num2;
+        } else if (opp === "*") {
+          result = num1 * num2;
+        } else if (opp === "/") {
+          result = num1 / num2;
+        }
+
+        document.getElementById('result').textContent = result;
+      }
+    </script>
+  </body>
+</html>
